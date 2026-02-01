@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useWebsiteStore } from "@/store/useWebsiteStore";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
-import { LogOut, LayoutDashboard } from "lucide-react";
+import { LogOut, LayoutDashboard, Waves } from "lucide-react";
 import { useState } from "react";
 import { LogoutModal } from "@/components/auth/LogoutModal";
 
@@ -30,7 +30,7 @@ export const StudioNavbar = () => {
                 <div className="flex justify-start">
                     <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
                         <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
-                            <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
+                            <Waves className="w-5 h-5 text-white" />
                         </div>
                         <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
                     </Link>
