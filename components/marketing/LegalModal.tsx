@@ -70,11 +70,11 @@ export const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
                         className="relative w-full max-w-2xl bg-[#0A0A0A] border border-white/10 rounded-[2.5rem] p-10 mt-10 shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar"
                     >
                         {/* Glow effect */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-indigo-600/10 blur-3xl rounded-full" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full" />
 
                         <div className="relative z-10">
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+                                <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 border border-blue-500/20">
                                     <content.icon className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-3xl font-bold text-white tracking-tight">{content.title}</h3>
@@ -107,8 +107,8 @@ export const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
                             <X className="w-4 h-4" />
                         </button>
                     </motion.div>
-                </div>
+                </div >
             )}
-        </AnimatePresence>
+        </AnimatePresence >
     );
 };

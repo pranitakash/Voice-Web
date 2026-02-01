@@ -88,7 +88,7 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                         className="relative w-full max-w-md bg-[#0A0A0A] border border-white/10 rounded-3xl p-10 shadow-2xl overflow-hidden"
                     >
                         {/* Glow Effect */}
-                        <div className="absolute -top-24 -left-24 w-48 h-48 bg-indigo-600/20 blur-[80px] rounded-full pointer-events-none" />
+                        <div className="absolute -top-24 -left-24 w-48 h-48 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none" />
 
                         <button
                             onClick={onClose}
@@ -98,7 +98,7 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                         </button>
 
                         <div className="text-center space-y-3 mb-10">
-                            <div className="w-12 h-12 bg-indigo-600 rounded-2xl mx-auto flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                            <div className="w-12 h-12 bg-blue-600 rounded-2xl mx-auto flex items-center justify-center shadow-lg shadow-blue-500/20">
                                 {isSignUp ? <UserPlus className="w-6 h-6 text-white" /> : <LogIn className="w-6 h-6 text-white" />}
                             </div>
                             <h2 className="text-2xl font-bold text-white">{isSignUp ? "Create Account" : "Welcome Back"}</h2>
@@ -115,31 +115,31 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
 
                         <form onSubmit={handleEmailAuth} className="space-y-4 mb-8">
                             <div className="relative group">
-                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20 group-focus-within:text-indigo-400 transition-colors" />
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20 group-focus-within:text-blue-400 transition-colors" />
                                 <input
                                     type="email"
                                     placeholder="Email Address"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-indigo-500/50 transition-all"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
                                 />
                             </div>
                             <div className="relative group">
-                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20 group-focus-within:text-indigo-400 transition-colors" />
+                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20 group-focus-within:text-blue-400 transition-colors" />
                                 <input
                                     type="password"
                                     placeholder="Password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-indigo-500/50 transition-all"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
                                 />
                             </div>
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full py-4 bg-indigo-600 text-white font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-indigo-500 transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg shadow-indigo-600/20"
+                                className="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-500 transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg shadow-blue-600/20"
                             >
                                 {isLoading ? (
                                     <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
@@ -193,7 +193,7 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                             </span>
                             <button
                                 onClick={() => setIsSignUp(!isSignUp)}
-                                className="ml-2 text-indigo-400 font-bold hover:text-indigo-300 transition-colors"
+                                className="ml-2 text-blue-400 font-bold hover:text-blue-300 transition-colors"
                             >
                                 {isSignUp ? "Sign In" : "Sign Up"}
                             </button>

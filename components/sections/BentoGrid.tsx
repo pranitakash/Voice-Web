@@ -39,7 +39,7 @@ export function BentoGrid({ content }: BentoGridProps) {
                         }}
                     >
                         {/* Hover Glow */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                         <div className="relative z-10">
                             <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>

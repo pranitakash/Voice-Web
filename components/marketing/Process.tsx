@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -16,7 +15,7 @@ const steps = [
         title: "Generate",
         description: "Watch as high-fidelity sections appear in real-time on your eternal canvas.",
         icon: Zap,
-        color: "text-purple-400",
+        color: "text-blue-400",
         image: "/features/generate.png"
     },
     {
@@ -33,14 +32,14 @@ export const Process = () => {
         <section className="py-32 px-4 bg-[#030303] overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-20">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                    <motion.span
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold tracking-widest uppercase mb-6"
+                        className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-widest uppercase mb-6"
                     >
-                        The Workflow
-                    </motion.div>
+                        How it works
+                    </motion.span>
                     <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">From thought to live site.</h2>
                     <p className="text-white/40 text-xl max-w-2xl mx-auto">A seamless, interactive workflow designed for modern creators.</p>
                 </div>
@@ -75,16 +74,16 @@ export const Process = () => {
 
                             {/* Card Content */}
                             <div className="px-8 pb-10 pt-2 flex-1 flex flex-col">
-                                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-indigo-400 transition-colors">
+                                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-blue-400 transition-colors">
                                     {step.title}
                                 </h3>
-                                <p className="text-white/40 leading-relaxed font-medium">
+                                <p className="text-white/40 leading-relaxed font-medium text-sm">
                                     {step.description}
                                 </p>
                             </div>
 
-                            {/* Decorative Background Glow */}
-                            <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-indigo-600/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                            {/* Background Glow */}
+                            <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700" />
                         </motion.div>
                     ))}
                 </div>

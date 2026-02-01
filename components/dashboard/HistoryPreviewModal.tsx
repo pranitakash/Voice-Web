@@ -42,8 +42,8 @@ export const HistoryPreviewModal = ({ isOpen, onClose, sections, prompt }: Histo
                         {/* Header */}
                         <div className="p-6 md:p-8 border-b border-white/5 bg-white/[0.02] flex items-center justify-between shrink-0">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-indigo-600/10 border border-indigo-600/20 rounded-2xl flex items-center justify-center">
-                                    <History className="w-6 h-6 text-indigo-400" />
+                                <div className="w-12 h-12 bg-blue-600/10 border border-blue-600/20 rounded-2xl flex items-center justify-center">
+                                    <History className="w-6 h-6 text-blue-400" />
                                 </div>
                                 <div>
                                     <p className="text-[10px] text-white/20 uppercase tracking-widest font-mono">Archive Preview</p>
@@ -54,7 +54,7 @@ export const HistoryPreviewModal = ({ isOpen, onClose, sections, prompt }: Histo
                             <div className="flex items-center gap-3">
                                 <button
                                     onClick={() => router.push('/studio')}
-                                    className="px-6 py-2.5 bg-indigo-600 rounded-full text-sm font-bold text-white hover:bg-indigo-500 transition-all flex items-center gap-2 group"
+                                    className="px-6 py-2.5 bg-blue-600 rounded-full text-sm font-bold text-white hover:bg-blue-500 transition-all flex items-center gap-2 group"
                                 >
                                     Open in Studio
                                     <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

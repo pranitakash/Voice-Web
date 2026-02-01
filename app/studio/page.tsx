@@ -95,11 +95,11 @@ export default function Home() {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="w-full p-12 border border-dashed border-indigo-500/30 rounded-3xl bg-indigo-500/5 backdrop-blur-xl"
+                      className="w-full p-12 border border-dashed border-blue-500/30 rounded-3xl bg-blue-500/5 backdrop-blur-xl"
                     >
                       <div className="flex flex-col items-center justify-center gap-4">
-                        <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
-                        <p className="text-indigo-400 font-medium">Gemini is designing your sections...</p>
+                        <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+                        <p className="text-blue-400 font-medium">Gemini is designing your sections...</p>
                       </div>
                     </motion.div>
                   )}
@@ -111,7 +111,7 @@ export default function Home() {
 
         {/* Listening Indicator (Floating) */}
         <div className="absolute -top-12 right-2 flex items-center gap-3">
-          <div className={`w-2.5 h-2.5 rounded-full ${isListening ? 'bg-indigo-500 animate-pulse shadow-[0_0_15px_rgba(99,102,241,0.5)]' : 'bg-gray-700'}`} />
+          <div className={`w-2.5 h-2.5 rounded-full ${isListening ? 'bg-blue-500 animate-pulse shadow-[0_0_15px_rgba(59,130,246,0.5)]' : 'bg-gray-700'}`} />
           {isListening && (
             <span className="text-white/40 text-[10px] font-mono tracking-widest uppercase bg-black/60 backdrop-blur-xl px-3 py-1.5 rounded-full border border-white/10 shadow-2xl">
               {transcript || "Listening..."}

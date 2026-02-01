@@ -19,7 +19,7 @@ export function HeroSection({ content }: HeroSectionProps) {
     return (
         <div className="w-full min-h-[60vh] flex flex-col items-center justify-center text-center p-8 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl relative overflow-hidden group">
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

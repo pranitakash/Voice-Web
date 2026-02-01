@@ -1,6 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, LogIn, Menu, X, LayoutDashboard, LogOut, User as UserIcon } from "lucide-react";
+import { Waves, Menu, X, ArrowRight, LayoutDashboard, LogOut, Settings, User, LogIn } from "lucide-react";
 import Link from "next/link";
 import { useWebsiteStore } from "@/store/useWebsiteStore";
 import { auth } from "@/lib/firebase";
@@ -32,8 +34,8 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
             <div className="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
                 {/* Left: Branding */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-indigo-500/20">
-                        <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
+                        <Waves className="w-5 h-5 text-white" />
                     </div>
                     <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
                 </Link>
@@ -44,8 +46,7 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
                     <Link href="/about" className="text-sm font-medium text-white/60 hover:text-white transition-colors">About</Link>
                     <Link href="/developer" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Developer</Link>
                     {user && (
-                        <Link href="/dashboard" className="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-2">
-                            <LayoutDashboard className="w-4 h-4" />
+                        <Link href="/dashboard" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
                             Dashboard
                         </Link>
                     )}
@@ -95,8 +96,7 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
                         <Link href="/about" className="text-lg font-medium text-white/60">About</Link>
                         <Link href="/developer" className="text-lg font-medium text-white/60">Developer</Link>
                         {user && (
-                            <Link href="/dashboard" className="text-lg font-medium text-indigo-400 flex items-center gap-2">
-                                <LayoutDashboard className="w-5 h-5" />
+                            <Link href="/dashboard" className="text-lg font-medium text-blue-400 flex items-center gap-2">
                                 Dashboard
                             </Link>
                         )}

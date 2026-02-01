@@ -11,7 +11,7 @@ const Waveform = ({ isListening }: { isListening: boolean }) => {
             {[...Array(5)].map((_, i) => (
                 <motion.div
                     key={i}
-                    className="w-1 bg-purple-400 rounded-full"
+                    className="w-1 bg-blue-400 rounded-full"
                     animate={{
                         height: isListening ? [4, 16, 4] : 4,
                         opacity: isListening ? 1 : 0.3,
@@ -63,12 +63,12 @@ export default function CommandCenter() {
                     borderColor: localError
                         ? '#ef4444'
                         : isGenerating
-                            ? '#a855f7'
+                            ? '#3b82f6'
                             : 'rgba(255,255,255,0.1)',
                     boxShadow: localError
                         ? '0 0 20px rgba(239, 68, 68, 0.5), 0 0 40px rgba(239, 68, 68, 0.3)'
                         : isGenerating
-                            ? '0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3)'
+                            ? '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3)'
                             : '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
                 }}
                 transition={{ duration: 0.3 }}
@@ -114,7 +114,7 @@ export default function CommandCenter() {
                                     key="processing"
                                     initial={{ opacity: 0, y: 5 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="text-sm font-medium text-purple-400 truncate px-2"
+                                    className="text-sm font-medium text-blue-400 truncate px-2"
                                 >
                                     Gemini is designing your site...
                                 </motion.p>
@@ -146,7 +146,7 @@ export default function CommandCenter() {
 
                 {/* Visualizer */}
                 <Waveform isListening={isListening} />
-            </motion.div>
-        </div>
+            </motion.div >
+        </div >
     );
 }

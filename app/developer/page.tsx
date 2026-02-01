@@ -14,7 +14,7 @@ export default function DeveloperPage() {
     const router = useRouter();
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white selection:bg-indigo-500/30">
+        <main className="min-h-screen bg-[#030303] text-white selection:bg-blue-500/30">
             <Navbar onLogin={() => setIsAuthModalOpen(true)} />
 
             <div className="pt-32 pb-24 px-4 max-w-4xl mx-auto">
@@ -25,13 +25,13 @@ export default function DeveloperPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="relative mb-8"
                     >
-                        <div className="w-40 h-40 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 p-1">
+                        <div className="w-40 h-40 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-600 p-1">
                             <div className="w-full h-full rounded-full bg-[#050505] flex items-center justify-center overflow-hidden">
                                 {/* Avatar Placeholder */}
                                 <span className="text-6xl font-black text-white/10 select-none">PA</span>
                             </div>
                         </div>
-                        <div className="absolute -bottom-2 -right-2 bg-indigo-600 p-2 rounded-xl border-4 border-[#030303]">
+                        <div className="absolute -bottom-2 -right-2 bg-blue-600 p-2 rounded-xl border-4 border-[#030303]">
                             <Code2 className="w-5 h-5 text-white" />
                         </div>
                     </motion.div>
@@ -47,7 +47,7 @@ export default function DeveloperPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-indigo-400 font-medium mb-8 uppercase tracking-widest text-sm"
+                        className="text-blue-400 font-medium mb-8 uppercase tracking-widest text-sm"
                     >
                         Visionary Developer & Creator
                     </motion.p>
@@ -72,7 +72,7 @@ export default function DeveloperPage() {
                             { name: "GitHub", icon: Github, href: "https://github.com/pranitakash", color: "hover:bg-gray-800" },
                             { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/pranit-akash/", color: "hover:bg-blue-600" },
                             { name: "Instagram", icon: Instagram, href: "https://instagram.com/pranit_akash", color: "hover:bg-pink-600" },
-                            { name: "Email", icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=pranit.dot.akash@gmail.com", color: "hover:bg-indigo-600" }
+                            { name: "Email", icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=pranit.dot.akash@gmail.com", color: "hover:bg-blue-600" }
                         ].map((social, i) => (
                             <motion.a
                                 key={social.name}
@@ -92,9 +92,9 @@ export default function DeveloperPage() {
                     {/* Stats Section */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                         {[
-                            { label: "Coffee Consumed", value: "∞ cups", icon: Heart, image: "/features/coffee.png", color: "text-red-400" },
-                            { label: "Lines of Code", value: "1M+", icon: Code2, image: "/features/code.png", color: "text-indigo-400" },
-                            { label: "Projects Shipped", value: "25+", icon: Rocket, image: "/features/rocket.png", color: "text-purple-400" }
+                            { label: "Coffee Consumed", value: "∞ cups", icon: Heart, image: "/features/coffee.png", color: "text-blue-400" },
+                            { label: "Lines of Code", value: "1M+", icon: Code2, image: "/features/code.png", color: "text-blue-400" },
+                            { label: "Projects Shipped", value: "25+", icon: Rocket, image: "/features/rocket.png", color: "text-blue-400" }
                         ].map((stat, i) => (
                             <motion.div
                                 key={stat.label}
@@ -119,7 +119,7 @@ export default function DeveloperPage() {
                                     </div>
                                 </div>
                                 <div className="px-6 pb-6 pt-2 text-center">
-                                    <span className="text-3xl font-black text-white group-hover:text-indigo-400 transition-colors tracking-tighter">
+                                    <span className="text-3xl font-black text-white group-hover:text-blue-400 transition-colors tracking-tighter">
                                         {stat.value}
                                     </span>
                                     <p className="text-[10px] text-white/30 uppercase font-black tracking-[0.2em] mt-2">

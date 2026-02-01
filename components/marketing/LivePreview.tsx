@@ -8,10 +8,10 @@ export const LivePreview = () => {
         <section className="py-24 px-4 overflow-hidden">
             <div className="max-w-6xl mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative rounded-2xl border border-white/10 bg-[#050505] shadow-2xl shadow-indigo-500/10 overflow-hidden"
+                    className="relative rounded-2xl border border-white/10 bg-[#050505] shadow-2xl shadow-blue-500/10 overflow-hidden"
                 >
                     {/* Browser Header */}
                     <div className="h-10 border-b border-white/10 bg-white/5 flex items-center px-4 gap-2">
@@ -43,11 +43,11 @@ export const LivePreview = () => {
                                 </div>
                             </div>
 
-                            {/* Floating Voice Bar Mockup */}
-                            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-64 h-12 bg-indigo-600/20 backdrop-blur-xl border border-indigo-500/30 rounded-full flex items-center justify-center gap-3 px-4">
-                                <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-                                <div className="h-2 w-full bg-indigo-500/20 rounded-full overflow-hidden">
-                                    <div className="h-full w-2/3 bg-indigo-500 rounded-full" />
+                            {/* Floating Voice Indicator */}
+                            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-64 h-12 bg-blue-600/20 backdrop-blur-xl border border-blue-500/30 rounded-full flex items-center justify-center gap-3 px-4">
+                                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                                <div className="h-2 w-full bg-blue-500/20 rounded-full overflow-hidden">
+                                    <div className="h-full w-2/3 bg-blue-500 rounded-full" />
                                 </div>
                             </div>
                         </div>

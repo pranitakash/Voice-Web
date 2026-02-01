@@ -39,7 +39,7 @@ const plans = [
             "Custom domain export"
         ],
         icon: Zap,
-        color: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
+        color: "bg-blue-500/20 text-blue-400 border-blue-500/30",
         cta: "Go Pro",
         popular: true
     },
@@ -56,7 +56,7 @@ const plans = [
             "Whitelabeling options"
         ],
         icon: Building2,
-        color: "bg-purple-500/10 text-purple-400",
+        color: "bg-blue-500/10 text-blue-400",
         cta: "Contact Sales",
         popular: false
     }
@@ -67,7 +67,7 @@ export default function PricingPage() {
     const router = useRouter();
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white selection:bg-indigo-500/30">
+        <main className="min-h-screen bg-[#030303] text-white selection:bg-blue-500/30">
             <Navbar onLogin={() => setIsAuthModalOpen(true)} />
 
             <div className="pt-32 pb-24 px-4 max-w-7xl mx-auto">
@@ -75,9 +75,9 @@ export default function PricingPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-6xl font-bold mb-6"
+                        className="text-5xl md:text-7xl font-black mb-6 tracking-tight"
                     >
-                        Simple, <span className="text-indigo-400">power-focused</span> pricing.
+                        Simple, <span className="text-blue-400">power-focused</span> pricing.
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -94,13 +94,14 @@ export default function PricingPage() {
                         <motion.div
                             key={plan.name}
                             initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`relative p-8 rounded-3xl bg-white/5 border backdrop-blur-xl group hover:scale-[1.02] transition-all ${plan.popular ? 'border-indigo-500/50 shadow-2xl shadow-indigo-500/10' : 'border-white/10'}`}
+                            className={`relative p-8 rounded-3xl bg-white/5 border backdrop-blur-xl group hover:scale-[1.02] transition-all ${plan.popular ? 'border-blue-500/50 shadow-2xl shadow-blue-500/10' : 'border-white/10'}`}
                         >
                             {plan.popular && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-500 text-white text-xs font-bold rounded-full">
-                                    MOST POPULAR
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
+                                    Most Popular
                                 </div>
                             )}
 
@@ -117,16 +118,16 @@ export default function PricingPage() {
 
                             <ul className="space-y-4 mb-8">
                                 {plan.features.map(feature => (
-                                    <li key={feature} className="flex items-start gap-3 text-sm text-white/80">
-                                        <Check className="w-5 h-5 text-indigo-400 shrink-0" />
-                                        {feature}
+                                    <li key={feature} className="flex items-center gap-3 text-white/50 group-hover:text-white/70 transition-colors">
+                                        <Check className="w-5 h-5 text-blue-400 shrink-0" />
+                                        <span className="text-sm font-medium">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
 
                             <button
                                 onClick={() => plan.price === "Custom" ? null : router.push('/studio')}
-                                className={`w-full py-4 px-6 rounded-2xl font-bold transition-all ${plan.popular ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/20' : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'}`}
+                                className={`w-full py-4 px-6 rounded-2xl font-bold transition-all ${plan.popular ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20' : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'}`}
                             >
                                 {plan.cta}
                             </button>

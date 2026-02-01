@@ -22,7 +22,7 @@ export function Navbar({ content }: NavbarProps) {
             <div className="flex items-center justify-between">
                 {/* Logo/Title */}
                 <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
                         <span className="text-white font-bold text-sm">{title.charAt(0)}</span>
                     </div>
                     <span className="text-white font-bold text-lg">{title}</span>

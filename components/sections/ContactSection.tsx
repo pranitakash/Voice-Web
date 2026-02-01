@@ -80,8 +80,8 @@ export function ContactSection({ content }: ContactSectionProps) {
                             </div>
                         </div>
                         <div className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                            <div className="p-2 rounded-lg bg-purple-500/20">
-                                <Phone className="w-5 h-5 text-purple-400" />
+                            <div className="p-2 rounded-lg bg-blue-500/20">
+                                <Phone className="w-5 h-5 text-blue-400" />
                             </div>
                             <div>
                                 <h3 className="text-white font-medium mb-1">Phone</h3>

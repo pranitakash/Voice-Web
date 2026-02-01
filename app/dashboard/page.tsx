@@ -108,7 +108,7 @@ function DashboardContent() {
                     <p className="text-white/40">Please sign in to view your dashboard.</p>
                     <button
                         onClick={() => setIsAuthModalOpen(true)}
-                        className="px-8 py-4 bg-indigo-600 rounded-2xl font-bold hover:bg-indigo-500 transition-all"
+                        className="px-8 py-4 bg-blue-600 rounded-2xl font-bold hover:bg-blue-500 transition-all"
                     >
                         Sign In Now
                     </button>
@@ -121,7 +121,7 @@ function DashboardContent() {
     const isSetupMode = searchParams.get("setup") === "true";
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white selection:bg-indigo-500/30">
+        <main className="min-h-screen bg-[#030303] text-white selection:bg-blue-500/30">
             <Navbar onLogin={() => setIsAuthModalOpen(true)} />
 
             <div className="pt-32 pb-24 px-4 max-w-7xl mx-auto">
@@ -134,11 +134,11 @@ function DashboardContent() {
                             animate={{ opacity: 1, x: 0 }}
                             className="bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 relative overflow-hidden"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-600/10 blur-3xl rounded-full" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-3xl rounded-full" />
 
                             <div className="flex flex-col items-center text-center space-y-4 mb-8">
-                                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-600 p-1">
-                                    <div className="w-full h-full rounded-full bg-[#050505] flex items-center justify-center text-3xl font-bold text-indigo-400">
+                                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-600 p-1">
+                                    <div className="w-full h-full rounded-full bg-[#050505] flex items-center justify-center text-3xl font-bold text-blue-400">
                                         {userProfile?.avatar ? (
                                             <img src={userProfile.avatar} alt="Avatar" className="w-[88px] h-[88px] rounded-full object-cover" />
                                         ) : (
@@ -158,7 +158,7 @@ function DashboardContent() {
                             {isEditing ? (
                                 <div className="space-y-4">
                                     {isSetupMode && (
-                                        <div className="p-3 bg-indigo-500/10 border border-indigo-500/20 rounded-xl text-indigo-400 text-xs mb-4">
+                                        <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-400 text-xs mb-4">
                                             Welcome! Please complete these basic fields to continue.
                                         </div>
                                     )}
@@ -168,7 +168,7 @@ function DashboardContent() {
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             placeholder="Your Name"
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-indigo-500/50 outline-none transition-all"
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all"
                                         />
                                     </div>
                                     <div className="grid grid-cols-2 gap-4">
@@ -177,7 +177,7 @@ function DashboardContent() {
                                             <select
                                                 value={formData.country}
                                                 onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-indigo-500/50 outline-none transition-all appearance-none"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all appearance-none"
                                             >
                                                 <option value="" disabled className="bg-[#0A0A0A]">Select</option>
                                                 {COUNTRIES.map(c => <option key={c} value={c} className="bg-[#0A0A0A]">{c}</option>)}
@@ -188,7 +188,7 @@ function DashboardContent() {
                                             <select
                                                 value={formData.role}
                                                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-indigo-500/50 outline-none transition-all appearance-none"
+                                                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all appearance-none"
                                             >
                                                 <option value="" disabled className="bg-[#0A0A0A]">Select</option>
                                                 {ROLES.map(r => <option key={r} value={r} className="bg-[#0A0A0A]">{r}</option>)}
@@ -201,7 +201,7 @@ function DashboardContent() {
                                             value={formData.useCase}
                                             onChange={(e) => setFormData({ ...formData, useCase: e.target.value })}
                                             placeholder="What will you use this tool for?"
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-indigo-500/50 outline-none transition-all"
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -211,13 +211,13 @@ function DashboardContent() {
                                             onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                                             placeholder="A short bio..."
                                             rows={2}
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-indigo-500/50 outline-none transition-all resize-none"
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all resize-none"
                                         />
                                     </div>
                                     <button
                                         onClick={handleSaveProfile}
                                         disabled={isSaving}
-                                        className="w-full py-3 bg-indigo-600 rounded-xl font-bold hover:bg-indigo-500 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                                        className="w-full py-3 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                                     >
                                         {isSaving ? "Saving..." : <><Save className="w-4 h-4" /> Save Profile</>}
                                     </button>
@@ -244,9 +244,9 @@ function DashboardContent() {
                             )}
                         </motion.div>
 
-                        <div className="bg-indigo-600/5 border border-indigo-500/10 rounded-3xl p-6 flex items-center gap-4">
-                            <div className="w-10 h-10 bg-indigo-600/20 rounded-xl flex items-center justify-center">
-                                <Clock className="w-5 h-5 text-indigo-400" />
+                        <div className="bg-blue-600/5 border border-blue-500/10 rounded-3xl p-6 flex items-center gap-4">
+                            <div className="w-10 h-10 bg-blue-600/20 rounded-xl flex items-center justify-center">
+                                <Clock className="w-5 h-5 text-blue-400" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-sm">Pro Status</h4>
@@ -259,7 +259,7 @@ function DashboardContent() {
                     <div className="lg:col-span-2 space-y-8">
                         <div className="flex items-center justify-between">
                             <h2 className="text-2xl font-bold flex items-center gap-3">
-                                <History className="w-6 h-6 text-indigo-400" />
+                                <History className="w-6 h-6 text-blue-400" />
                                 Generation History
                             </h2>
                             <span className="text-xs text-white/20 px-3 py-1 border border-white/10 rounded-full font-mono">
@@ -296,7 +296,7 @@ function DashboardContent() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         whileHover={{ scale: 1.01, y: -2 }}
-                                        className="bg-[#0A0A0A] border border-white/10 rounded-2xl p-6 hover:border-indigo-500/30 transition-all cursor-pointer group relative overflow-hidden flex gap-6"
+                                        className="bg-[#0A0A0A] border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 transition-all cursor-pointer group relative overflow-hidden flex gap-6"
                                         onClick={() => {
                                             setSelectedHistoryItem({
                                                 id: item.id,
@@ -307,7 +307,7 @@ function DashboardContent() {
                                         }}
                                     >
                                         {/* Subtle Glow */}
-                                        <div className="absolute inset-0 bg-indigo-500/0 group-hover:bg-indigo-500/[0.02] transition-colors duration-500" />
+                                        <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/[0.02] transition-colors duration-500" />
 
                                         {/* Thumbnail Header */}
                                         <div className="w-24 h-24 rounded-xl overflow-hidden bg-white/5 border border-white/10 hidden sm:block shrink-0">
@@ -322,7 +322,7 @@ function DashboardContent() {
 
                                         <div className="flex-1 flex items-start justify-between min-w-0">
                                             <div className="space-y-2 truncate">
-                                                <p className="text-sm font-bold text-indigo-400 font-mono tracking-tighter uppercase">Prompt</p>
+                                                <p className="text-sm font-bold text-blue-400 font-mono tracking-tighter uppercase">Prompt</p>
                                                 <h4 className="text-lg font-medium leading-tight group-hover:text-white transition-colors truncate">
                                                     &quot;{item.prompt}&quot;
                                                 </h4>
@@ -337,7 +337,7 @@ function DashboardContent() {
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-indigo-600 transition-all shrink-0">
+                                            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 transition-all shrink-0">
                                                 <ArrowRight className="w-5 h-5 group-hover:text-white text-white/20" />
                                             </div>
                                         </div>
@@ -367,7 +367,7 @@ export default function Dashboard() {
     return (
         <Suspense fallback={
             <div className="min-h-screen bg-[#030303] flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+                <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
             </div>
         }>
             <DashboardContent />
