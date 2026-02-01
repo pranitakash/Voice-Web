@@ -31,29 +31,33 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6 pointer-events-none">
-            <div className="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
+            <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center pointer-events-auto">
                 {/* Left: Branding */}
-                <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
-                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
-                        <Waves className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
-                </Link>
+                <div className="flex justify-start">
+                    <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
+                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
+                            <Waves className="w-5 h-5 text-white" />
+                        </div>
+                        <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
+                    </Link>
+                </div>
 
                 {/* Middle: Links */}
-                <div className="hidden md:flex items-center gap-10 px-8 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm">
-                    <Link href="/pricing" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Pricing</Link>
-                    <Link href="/about" className="text-sm font-medium text-white/60 hover:text-white transition-colors">About</Link>
-                    <Link href="/developer" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Developer</Link>
-                    {user && (
-                        <Link href="/dashboard" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
-                            Dashboard
-                        </Link>
-                    )}
+                <div className="hidden md:flex justify-center">
+                    <div className="flex items-center gap-10 px-8 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm">
+                        <Link href="/pricing" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Pricing</Link>
+                        <Link href="/about" className="text-sm font-medium text-white/60 hover:text-white transition-colors">About</Link>
+                        <Link href="/developer" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Developer</Link>
+                        {user && (
+                            <Link href="/dashboard" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
+                                Dashboard
+                            </Link>
+                        )}
+                    </div>
                 </div>
 
                 {/* Right: Actions */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center justify-end gap-4">
                     {/* Auth Actions */}
                     {user ? (
                         <button
