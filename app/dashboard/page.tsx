@@ -16,7 +16,9 @@ import { Section } from "@/store/useWebsiteStore";
 const COUNTRIES = ["United States", "India", "United Kingdom", "Canada", "Germany", "France", "Japan", "Australia", "Brazil", "Other"];
 const ROLES = ["Student", "Teacher", "Employee", "Freelancer", "Founder", "Designer", "Developer", "Other"];
 
-export default function Dashboard() {
+import { Suspense } from "react";
+
+function DashboardContent() {
     const user = useWebsiteStore((state) => state.user);
     const userProfile = useWebsiteStore((state) => state.userProfile);
     const setUserProfile = useWebsiteStore((state) => state.setUserProfile);
@@ -358,5 +360,17 @@ export default function Dashboard() {
                 prompt={selectedHistoryItem?.prompt || ''}
             />
         </main>
+    );
+}
+
+export default function Dashboard() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-[#030303] flex items-center justify-center">
+                <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+            </div>
+        }>
+            <DashboardContent />
+        </Suspense>
     );
 }
