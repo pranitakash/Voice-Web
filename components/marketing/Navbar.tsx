@@ -33,7 +33,7 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
         <nav className="fixed top-0 left-0 right-0 z-[100] px-6 py-6 pointer-events-none">
             <div className="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
                 {/* Left: Branding */}
-                <Link href="/" className="flex items-center gap-2 group">
+                <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
                     <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
                         <Waves className="w-5 h-5 text-white" />
                     </div>
