@@ -28,7 +28,7 @@ export const LogoutModal = ({ isOpen, onClose, onConfirm }: LogoutModalProps) =>
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="relative w-full max-w-md bg-[#0A0A0A] border border-white/10 rounded-[2.5rem] p-8 shadow-2xl overflow-hidden"
+                        className="relative w-full max-w-md bg-brand-card border border-brand-border rounded-[2.5rem] p-8 shadow-2xl overflow-hidden"
                     >
                         {/* Glow effect */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-red-600/10 blur-3xl rounded-full" />
@@ -39,16 +39,16 @@ export const LogoutModal = ({ isOpen, onClose, onConfirm }: LogoutModalProps) =>
                             </div>
 
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-white tracking-tight">Confirm Logout</h3>
-                                <p className="text-white/40 leading-relaxed">
-                                    Are you sure you want to sign out of <span className="text-white/60 font-medium">Voice Web</span>?
+                                <h3 className="text-2xl font-bold text-brand-foreground tracking-tight">Confirm Logout</h3>
+                                <p className="text-brand-foreground/40 leading-relaxed">
+                                    Are you sure you want to sign out of <span className="text-brand-foreground/60 font-medium">Voice Web</span>?
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4 w-full">
                                 <button
                                     onClick={onClose}
-                                    className="py-4 bg-white/5 border border-white/10 rounded-2xl font-bold text-white/80 hover:bg-white/10 transition-all active:scale-95"
+                                    className="py-4 bg-brand-foreground/5 border border-brand-border rounded-2xl font-bold text-brand-foreground/80 hover:bg-brand-foreground/10 transition-all active:scale-95"
                                 >
                                     Cancel
                                 </button>
@@ -64,7 +64,7 @@ export const LogoutModal = ({ isOpen, onClose, onConfirm }: LogoutModalProps) =>
                         {/* Close button */}
                         <button
                             onClick={onClose}
-                            className="absolute top-6 right-6 p-2 rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all"
+                            className="absolute top-6 right-6 p-2 rounded-full bg-brand-foreground/5 text-brand-foreground/40 hover:text-brand-foreground hover:bg-brand-foreground/10 transition-all"
                         >
                             <X className="w-4 h-4" />
                         </button>

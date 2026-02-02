@@ -33,7 +33,7 @@ export default function LandingPage() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#030303] selection:bg-blue-500/30 selection:text-blue-200">
+    <main className="relative min-h-screen bg-brand-background selection:bg-brand-accent/30 selection:text-brand-accent">
       <AnimatePresence>
         {isTransitioning && (
           <motion.div

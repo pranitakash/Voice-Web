@@ -37,31 +37,31 @@ export const HistoryPreviewModal = ({ isOpen, onClose, sections, prompt }: Histo
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="relative w-full max-w-6xl h-full max-h-[90vh] bg-[#0A0A0A] border border-white/10 rounded-[2.5rem] flex flex-col shadow-2xl overflow-hidden"
+                        className="relative w-full max-w-6xl h-full max-h-[90vh] bg-brand-card border border-brand-border rounded-[2.5rem] flex flex-col shadow-2xl overflow-hidden"
                     >
                         {/* Header */}
-                        <div className="p-6 md:p-8 border-b border-white/5 bg-white/[0.02] flex items-center justify-between shrink-0">
+                        <div className="p-6 md:p-8 border-b border-brand-border bg-brand-foreground/[0.02] flex items-center justify-between shrink-0">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-blue-600/10 border border-blue-600/20 rounded-2xl flex items-center justify-center">
-                                    <History className="w-6 h-6 text-blue-400" />
+                                <div className="w-12 h-12 bg-brand-accent/10 border border-brand-accent/20 rounded-2xl flex items-center justify-center">
+                                    <History className="w-6 h-6 text-brand-accent" />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] text-white/20 uppercase tracking-widest font-mono">Archive Preview</p>
-                                    <h3 className="text-xl font-bold text-white tracking-tight line-clamp-1">&quot;{prompt}&quot;</h3>
+                                    <p className="text-[10px] text-brand-foreground/20 uppercase tracking-widest font-mono">Archive Preview</p>
+                                    <h3 className="text-xl font-bold text-brand-foreground tracking-tight line-clamp-1">&quot;{prompt}&quot;</h3>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-3">
                                 <button
                                     onClick={() => router.push('/studio')}
-                                    className="px-6 py-2.5 bg-blue-600 rounded-full text-sm font-bold text-white hover:bg-blue-500 transition-all flex items-center gap-2 group"
+                                    className="px-6 py-2.5 bg-brand-accent rounded-full text-sm font-bold text-brand-accent-foreground hover:opacity-90 transition-all flex items-center gap-2 group shadow-lg shadow-brand-accent/20"
                                 >
                                     Open in Studio
                                     <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                 </button>
                                 <button
                                     onClick={onClose}
-                                    className="p-3 rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all"
+                                    className="p-3 rounded-full bg-brand-foreground/5 text-brand-foreground/40 hover:text-brand-foreground hover:bg-brand-foreground/10 transition-all"
                                 >
                                     <X className="w-5 h-5" />
                                 </button>
@@ -69,7 +69,7 @@ export const HistoryPreviewModal = ({ isOpen, onClose, sections, prompt }: Histo
                         </div>
 
                         {/* Preview Body */}
-                        <div className="flex-1 overflow-y-auto custom-scrollbar bg-[#050505] p-6 md:p-12">
+                        <div className="flex-1 overflow-y-auto custom-scrollbar bg-brand-background p-6 md:p-12">
                             <div className="max-w-4xl mx-auto flex flex-col gap-12">
                                 {sections.map((section, index) => (
                                     <motion.div
@@ -89,8 +89,8 @@ export const HistoryPreviewModal = ({ isOpen, onClose, sections, prompt }: Histo
                         </div>
 
                         {/* Footer Info */}
-                        <div className="p-4 border-t border-white/5 bg-white/[0.01] text-center shrink-0">
-                            <p className="text-[10px] text-white/10 font-mono tracking-widest uppercase">
+                        <div className="p-4 border-t border-brand-border bg-brand-foreground/[0.01] text-center shrink-0">
+                            <p className="text-[10px] text-brand-foreground/10 font-mono tracking-widest uppercase">
                                 Generated locally via Gemini 2.0 Flash • {sections.length} Components
                             </p>
                         </div>

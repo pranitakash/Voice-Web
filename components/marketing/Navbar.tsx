@@ -8,6 +8,7 @@ import { useWebsiteStore } from "@/store/useWebsiteStore";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
 import { LogoutModal } from "@/components/auth/LogoutModal";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface NavbarProps {
     onLogin: () => void;
@@ -34,22 +35,22 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
             <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center pointer-events-auto">
                 {/* Left: Branding */}
                 <div className="flex justify-start">
-                    <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
-                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
-                            <Waves className="w-5 h-5 text-white" />
+                    <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-brand-background/5 backdrop-blur-xl border border-brand-border rounded-full shadow-sm group hover:bg-brand-foreground/10 transition-all">
+                        <div className="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-brand-accent/20">
+                            <Waves className="w-5 h-5 text-brand-accent-foreground" />
                         </div>
-                        <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
+                        <span className="text-xl font-bold text-brand-foreground tracking-tight">Voice Web</span>
                     </Link>
                 </div>
 
                 {/* Middle: Links */}
                 <div className="hidden md:flex justify-center">
-                    <div className="flex items-center gap-10 px-8 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm">
-                        <Link href="/pricing" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Pricing</Link>
-                        <Link href="/about" className="text-sm font-medium text-white/60 hover:text-white transition-colors">About</Link>
-                        <Link href="/developer" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Developer</Link>
+                    <div className="flex items-center gap-10 px-8 py-3 bg-brand-background/5 backdrop-blur-xl border border-brand-border rounded-full shadow-sm">
+                        <Link href="/pricing" className="text-sm font-medium text-brand-foreground/60 hover:text-brand-foreground transition-colors">Pricing</Link>
+                        <Link href="/about" className="text-sm font-medium text-brand-foreground/60 hover:text-brand-foreground transition-colors">About</Link>
+                        <Link href="/developer" className="text-sm font-medium text-brand-foreground/60 hover:text-brand-foreground transition-colors">Developer</Link>
                         {user && (
-                            <Link href="/dashboard" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2">
+                            <Link href="/dashboard" className="text-sm font-medium text-brand-accent hover:opacity-80 transition-colors flex items-center gap-2">
                                 Dashboard
                             </Link>
                         )}
@@ -58,11 +59,12 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
 
                 {/* Right: Actions */}
                 <div className="flex items-center justify-end gap-4">
+                    <ThemeToggle />
                     {/* Auth Actions */}
                     {user ? (
                         <button
                             onClick={handleLogout}
-                            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-all active:scale-95"
+                            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-brand-foreground/5 border border-brand-border text-brand-foreground text-sm font-bold rounded-full hover:bg-brand-foreground/10 transition-all active:scale-95"
                         >
                             <LogOut className="w-4 h-4" />
                             Logout
@@ -70,7 +72,7 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
                     ) : (
                         <button
                             onClick={onLogin}
-                            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-white/90 transition-all active:scale-95 shadow-lg"
+                            className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-brand-foreground text-brand-background text-sm font-bold rounded-full hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-brand-accent/10"
                         >
                             <LogIn className="w-4 h-4" />
                             Login
@@ -80,7 +82,7 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
                     {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white"
+                        className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-brand-foreground/5 border border-brand-border text-brand-foreground"
                     >
                         {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                     </button>
@@ -94,21 +96,21 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-24 left-6 right-6 p-8 bg-[#0A0A0A] border border-white/10 rounded-3xl flex flex-col gap-6 md:hidden pointer-events-auto shadow-2xl"
+                        className="absolute top-24 left-6 right-6 p-8 bg-brand-card border border-brand-border rounded-3xl flex flex-col gap-6 md:hidden pointer-events-auto shadow-2xl"
                     >
-                        <Link href="/pricing" className="text-lg font-medium text-white/60">Pricing</Link>
-                        <Link href="/about" className="text-lg font-medium text-white/60">About</Link>
-                        <Link href="/developer" className="text-lg font-medium text-white/60">Developer</Link>
+                        <Link href="/pricing" className="text-lg font-medium text-brand-foreground/60">Pricing</Link>
+                        <Link href="/about" className="text-lg font-medium text-brand-foreground/60">About</Link>
+                        <Link href="/developer" className="text-lg font-medium text-brand-foreground/60">Developer</Link>
                         {user && (
-                            <Link href="/dashboard" className="text-lg font-medium text-blue-400 flex items-center gap-2">
+                            <Link href="/dashboard" className="text-lg font-medium text-brand-accent flex items-center gap-2">
                                 Dashboard
                             </Link>
                         )}
-                        <hr className="border-white/5" />
+                        <hr className="border-brand-border/50" />
                         {user ? (
                             <button
                                 onClick={() => { handleLogout(); setIsMobileMenuOpen(false); }}
-                                className="w-full py-4 bg-white/5 border border-white/10 text-white font-bold rounded-2xl flex items-center justify-center gap-2"
+                                className="w-full py-4 bg-brand-foreground/5 border border-brand-border text-brand-foreground font-bold rounded-2xl flex items-center justify-center gap-2"
                             >
                                 <LogOut className="w-5 h-5" />
                                 Logout
@@ -116,7 +118,7 @@ export const Navbar = ({ onLogin }: NavbarProps) => {
                         ) : (
                             <button
                                 onClick={() => { onLogin(); setIsMobileMenuOpen(false); }}
-                                className="w-full py-4 bg-white text-black font-bold rounded-2xl flex items-center justify-center gap-2"
+                                className="w-full py-4 bg-brand-foreground text-brand-background font-bold rounded-2xl flex items-center justify-center gap-2"
                             >
                                 <LogIn className="w-5 h-5" />
                                 Login

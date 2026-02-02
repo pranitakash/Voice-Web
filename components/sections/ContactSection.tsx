@@ -15,15 +15,15 @@ export function ContactSection({ content }: ContactSectionProps) {
     const description = content?.description || 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.';
 
     return (
-        <div className="w-full p-8 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl">
+        <div className="w-full p-8 border border-brand-border rounded-2xl bg-brand-card/40 backdrop-blur-xl">
             <div className="max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-8"
                 >
-                    <h2 className="text-4xl font-bold text-white mb-4">{title}</h2>
-                    <p className="text-white/60">{description}</p>
+                    <h2 className="text-4xl font-bold text-brand-foreground mb-4">{title}</h2>
+                    <p className="text-brand-foreground/60">{description}</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -35,30 +35,30 @@ export function ContactSection({ content }: ContactSectionProps) {
                         className="space-y-4"
                     >
                         <div>
-                            <label className="block text-white/80 text-sm font-medium mb-2">Name</label>
+                            <label className="block text-brand-foreground/80 text-sm font-medium mb-2">Name</label>
                             <input
                                 type="text"
-                                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-white/30 transition-colors"
+                                className="w-full px-4 py-3 rounded-lg bg-brand-foreground/5 border border-brand-border text-brand-foreground placeholder-brand-foreground/40 focus:outline-none focus:border-brand-accent/30 transition-colors"
                                 placeholder="Your name"
                             />
                         </div>
                         <div>
-                            <label className="block text-white/80 text-sm font-medium mb-2">Email</label>
+                            <label className="block text-brand-foreground/80 text-sm font-medium mb-2">Email</label>
                             <input
                                 type="email"
-                                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-white/30 transition-colors"
+                                className="w-full px-4 py-3 rounded-lg bg-brand-foreground/5 border border-brand-border text-brand-foreground placeholder-brand-foreground/40 focus:outline-none focus:border-brand-accent/30 transition-colors"
                                 placeholder="your@email.com"
                             />
                         </div>
                         <div>
-                            <label className="block text-white/80 text-sm font-medium mb-2">Message</label>
+                            <label className="block text-brand-foreground/80 text-sm font-medium mb-2">Message</label>
                             <textarea
                                 rows={4}
-                                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-white/30 transition-colors resize-none"
+                                className="w-full px-4 py-3 rounded-lg bg-brand-foreground/5 border border-brand-border text-brand-foreground placeholder-brand-foreground/40 focus:outline-none focus:border-brand-accent/30 transition-colors resize-none"
                                 placeholder="Your message..."
                             />
                         </div>
-                        <button className="w-full px-6 py-3 rounded-lg bg-white text-black font-semibold hover:bg-white/90 transition-colors">
+                        <button className="w-full px-6 py-3 rounded-lg bg-brand-foreground text-brand-background font-semibold hover:opacity-90 transition-colors">
                             Send Message
                         </button>
                     </motion.div>
@@ -70,31 +70,31 @@ export function ContactSection({ content }: ContactSectionProps) {
                         transition={{ delay: 0.3 }}
                         className="space-y-6"
                     >
-                        <div className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                            <div className="p-2 rounded-lg bg-blue-500/20">
-                                <Mail className="w-5 h-5 text-blue-400" />
+                        <div className="flex items-start gap-4 p-4 rounded-lg bg-brand-foreground/5 border border-brand-border">
+                            <div className="p-2 rounded-lg bg-brand-accent/20">
+                                <Mail className="w-5 h-5 text-brand-accent" />
                             </div>
                             <div>
-                                <h3 className="text-white font-medium mb-1">Email</h3>
-                                <p className="text-white/60 text-sm">hello@example.com</p>
+                                <h3 className="text-brand-foreground font-medium mb-1">Email</h3>
+                                <p className="text-brand-foreground/60 text-sm">hello@example.com</p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                            <div className="p-2 rounded-lg bg-blue-500/20">
-                                <Phone className="w-5 h-5 text-blue-400" />
+                        <div className="flex items-start gap-4 p-4 rounded-lg bg-brand-foreground/5 border border-brand-border">
+                            <div className="p-2 rounded-lg bg-brand-accent/20">
+                                <Phone className="w-5 h-5 text-brand-accent" />
                             </div>
                             <div>
-                                <h3 className="text-white font-medium mb-1">Phone</h3>
-                                <p className="text-white/60 text-sm">+1 (555) 123-4567</p>
+                                <h3 className="text-brand-foreground font-medium mb-1">Phone</h3>
+                                <p className="text-brand-foreground/60 text-sm">+1 (555) 123-4567</p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                            <div className="p-2 rounded-lg bg-green-500/20">
-                                <MapPin className="w-5 h-5 text-green-400" />
+                        <div className="flex items-start gap-4 p-4 rounded-lg bg-brand-foreground/5 border border-brand-border">
+                            <div className="p-2 rounded-lg bg-brand-accent/20">
+                                <MapPin className="w-5 h-5 text-brand-accent" />
                             </div>
                             <div>
-                                <h3 className="text-white font-medium mb-1">Location</h3>
-                                <p className="text-white/60 text-sm">123 Main St, City, Country</p>
+                                <h3 className="text-brand-foreground font-medium mb-1">Location</h3>
+                                <p className="text-brand-foreground/60 text-sm">123 Main St, City, Country</p>
                             </div>
                         </div>
                     </motion.div>

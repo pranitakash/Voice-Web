@@ -17,9 +17,9 @@ export function HeroSection({ content }: HeroSectionProps) {
     const cta = content?.cta || 'Get Started';
 
     return (
-        <div className="w-full min-h-[60vh] flex flex-col items-center justify-center text-center p-8 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl relative overflow-hidden group">
+        <div className="w-full min-h-[60vh] flex flex-col items-center justify-center text-center p-8 border border-brand-border rounded-2xl bg-brand-card/40 backdrop-blur-xl relative overflow-hidden group">
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-brand-accent/10 to-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -27,20 +27,20 @@ export function HeroSection({ content }: HeroSectionProps) {
                 transition={{ delay: 0.2 }}
                 className="z-10 max-w-3xl"
             >
-                <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-xs text-blue-400 font-medium mb-6">
+                <span className="inline-block py-1 px-3 rounded-full bg-brand-foreground/5 border border-brand-border text-xs text-brand-accent font-medium mb-6">
                     AI-Powered Experience
                 </span>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent mb-6">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-b from-brand-foreground to-brand-foreground/40 bg-clip-text text-transparent mb-6">
                     {title}
                 </h1>
-                <p className="text-lg text-white/60 mb-8 max-w-2xl mx-auto">
+                <p className="text-lg text-brand-foreground/60 mb-8 max-w-2xl mx-auto">
                     {subtitle}
                 </p>
                 <div className="flex gap-4 justify-center">
-                    <button className="px-6 py-3 rounded-lg bg-white text-black font-semibold hover:bg-white/90 transition-colors">
+                    <button className="px-6 py-3 rounded-lg bg-brand-foreground text-brand-background font-semibold hover:opacity-90 transition-colors">
                         {cta}
                     </button>
-                    <button className="px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors">
+                    <button className="px-6 py-3 rounded-lg bg-brand-foreground/5 border border-brand-border text-brand-foreground font-medium hover:bg-brand-foreground/10 transition-colors">
                         View Components
                     </button>
                 </div>

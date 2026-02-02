@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { LogOut, LayoutDashboard, Waves } from "lucide-react";
 import { useState } from "react";
 import { LogoutModal } from "@/components/auth/LogoutModal";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const StudioNavbar = () => {
     const user = useWebsiteStore((state) => state.user);
@@ -29,7 +30,7 @@ export const StudioNavbar = () => {
                 {/* Left: Branding */}
                 <div className="flex justify-start">
                     <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
-                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
+                        <div className="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-brand-accent/20">
                             <Waves className="w-5 h-5 text-white" />
                         </div>
                         <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
@@ -41,7 +42,7 @@ export const StudioNavbar = () => {
                     <div className="flex items-center gap-10 px-8 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm">
                         <Link
                             href="/dashboard"
-                            className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
+                            className="text-sm font-medium text-brand-accent hover:text-brand-accent transition-colors flex items-center gap-2"
                         >
                             <LayoutDashboard className="w-4 h-4" />
                             Dashboard
@@ -51,6 +52,7 @@ export const StudioNavbar = () => {
 
                 {/* Right: Actions */}
                 <div className="flex items-center justify-end gap-4">
+                    <ThemeToggle />
                     <button
                         onClick={handleLogout}
                         className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-all active:scale-95"

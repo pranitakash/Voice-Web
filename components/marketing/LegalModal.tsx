@@ -59,7 +59,7 @@ export const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="absolute inset-0 bg-black/80 backdrop-blur-md"
+                        className="absolute inset-0 bg-brand-background/80 backdrop-blur-md"
                     />
 
                     {/* Modal */}
@@ -67,24 +67,24 @@ export const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="relative w-full max-w-2xl bg-[#0A0A0A] border border-white/10 rounded-[2.5rem] p-10 mt-10 shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar"
+                        className="relative w-full max-w-2xl bg-brand-card border border-brand-border rounded-[2.5rem] p-10 mt-10 shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar"
                     >
                         {/* Glow effect */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-brand-accent/10 blur-3xl rounded-full" />
 
                         <div className="relative z-10">
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 border border-blue-500/20">
+                                <div className="w-12 h-12 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent border border-brand-accent/20">
                                     <content.icon className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-3xl font-bold text-white tracking-tight">{content.title}</h3>
+                                <h3 className="text-3xl font-bold text-brand-foreground tracking-tight">{content.title}</h3>
                             </div>
 
                             <div className="space-y-8">
                                 {content.sections.map((section, i) => (
                                     <div key={i} className="space-y-3">
-                                        <h4 className="text-lg font-bold text-white/80">{section.heading}</h4>
-                                        <p className="text-white/40 leading-relaxed">
+                                        <h4 className="text-lg font-bold text-brand-foreground/80">{section.heading}</h4>
+                                        <p className="text-brand-foreground/40 leading-relaxed">
                                             {section.text}
                                         </p>
                                     </div>
@@ -93,7 +93,7 @@ export const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
 
                             <button
                                 onClick={onClose}
-                                className="w-full mt-10 py-4 bg-white/5 border border-white/10 rounded-2xl font-bold text-white hover:bg-white/10 transition-all active:scale-95"
+                                className="w-full mt-10 py-4 bg-brand-foreground/5 border border-brand-border rounded-2xl font-bold text-brand-foreground hover:bg-brand-foreground/10 transition-all active:scale-95"
                             >
                                 Close
                             </button>
@@ -102,7 +102,7 @@ export const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
                         {/* Close button icon */}
                         <button
                             onClick={onClose}
-                            className="absolute top-8 right-8 p-2 rounded-full bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all"
+                            className="absolute top-8 right-8 p-2 rounded-full bg-brand-foreground/5 text-brand-foreground/40 hover:text-brand-foreground hover:bg-brand-foreground/10 transition-all"
                         >
                             <X className="w-4 h-4" />
                         </button>

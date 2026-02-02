@@ -22,7 +22,7 @@ const plans = [
             "Basic export options"
         ],
         icon: Sparkles,
-        color: "bg-blue-500/10 text-blue-400",
+        color: "bg-brand-accent/10 text-brand-accent",
         cta: "Start for free",
         popular: false
     },
@@ -39,7 +39,7 @@ const plans = [
             "Custom domain export"
         ],
         icon: Zap,
-        color: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+        color: "bg-brand-accent/20 text-brand-accent border-brand-accent/30",
         cta: "Go Pro",
         popular: true
     },
@@ -56,7 +56,7 @@ const plans = [
             "Whitelabeling options"
         ],
         icon: Building2,
-        color: "bg-blue-500/10 text-blue-400",
+        color: "bg-brand-accent/10 text-brand-accent",
         cta: "Contact Sales",
         popular: false
     }
@@ -67,7 +67,7 @@ export default function PricingPage() {
     const router = useRouter();
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white selection:bg-blue-500/30">
+        <main className="min-h-screen bg-brand-background text-brand-foreground selection:bg-brand-accent/30">
             <Navbar onLogin={() => setIsAuthModalOpen(true)} />
 
             <div className="pt-32 pb-24 px-4 max-w-7xl mx-auto">
@@ -75,15 +75,15 @@ export default function PricingPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-7xl font-black mb-6 tracking-tight"
+                        className="text-5xl md:text-7xl font-black mb-6 tracking-tight text-brand-foreground"
                     >
-                        Simple, <span className="text-blue-400">power-focused</span> pricing.
+                        Simple, <span className="text-brand-accent">power-focused</span> pricing.
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-white/40 text-xl max-w-2xl mx-auto"
+                        className="text-brand-foreground/40 text-xl max-w-2xl mx-auto"
                     >
                         Choose the level of AI power that suits your workflow. Ship faster than ever before.
                     </motion.p>
@@ -97,11 +97,11 @@ export default function PricingPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`relative p-8 rounded-3xl bg-white/5 border backdrop-blur-xl group hover:scale-[1.02] transition-all ${plan.popular ? 'border-blue-500/50 shadow-2xl shadow-blue-500/10' : 'border-white/10'}`}
+                            className={`relative p-8 rounded-3xl bg-brand-card border backdrop-blur-xl group hover:scale-[1.02] transition-all ${plan.popular ? 'border-brand-accent/50 shadow-2xl shadow-brand-accent/10' : 'border-brand-border'}`}
                         >
                             {plan.popular && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-500 text-white text-xs font-bold rounded-full">
-                                    Most Popular
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-accent text-brand-accent-foreground text-xs font-bold rounded-full">
+                                    MOST POPULAR
                                 </div>
                             )}
 
@@ -109,17 +109,17 @@ export default function PricingPage() {
                                 <plan.icon className="w-6 h-6" />
                             </div>
 
-                            <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                            <h3 className="text-2xl font-bold mb-2 text-brand-foreground">{plan.name}</h3>
                             <div className="flex items-baseline gap-1 mb-4">
-                                <span className="text-4xl font-bold">{plan.price}</span>
-                                {plan.price !== "Custom" && <span className="text-white/40 text-sm">/mo</span>}
+                                <span className="text-4xl font-bold text-brand-foreground">{plan.price}</span>
+                                {plan.price !== "Custom" && <span className="text-brand-foreground/40 text-sm">/mo</span>}
                             </div>
-                            <p className="text-white/60 text-sm mb-8">{plan.description}</p>
+                            <p className="text-brand-foreground/60 text-sm mb-8">{plan.description}</p>
 
                             <ul className="space-y-4 mb-8">
                                 {plan.features.map(feature => (
-                                    <li key={feature} className="flex items-center gap-3 text-white/50 group-hover:text-white/70 transition-colors">
-                                        <Check className="w-5 h-5 text-blue-400 shrink-0" />
+                                    <li key={feature} className="flex items-center gap-3 text-brand-foreground/50 group-hover:text-brand-foreground/70 transition-colors">
+                                        <Check className="w-5 h-5 text-brand-accent shrink-0" />
                                         <span className="text-sm font-medium">{feature}</span>
                                     </li>
                                 ))}
@@ -127,7 +127,7 @@ export default function PricingPage() {
 
                             <button
                                 onClick={() => plan.price === "Custom" ? null : router.push('/studio')}
-                                className={`w-full py-4 px-6 rounded-2xl font-bold transition-all ${plan.popular ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20' : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'}`}
+                                className={`w-full py-4 px-6 rounded-2xl font-bold transition-all ${plan.popular ? 'bg-brand-accent hover:opacity-90 text-brand-accent-foreground shadow-lg shadow-brand-accent/20' : 'bg-brand-foreground/10 hover:bg-brand-foreground/20 text-brand-foreground border border-brand-border'}`}
                             >
                                 {plan.cta}
                             </button>

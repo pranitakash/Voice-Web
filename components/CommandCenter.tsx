@@ -11,7 +11,7 @@ const Waveform = ({ isListening }: { isListening: boolean }) => {
             {[...Array(5)].map((_, i) => (
                 <motion.div
                     key={i}
-                    className="w-1 bg-blue-400 rounded-full"
+                    className="w-1 bg-brand-accent rounded-full"
                     animate={{
                         height: isListening ? [4, 16, 4] : 4,
                         opacity: isListening ? 1 : 0.3,
@@ -72,13 +72,13 @@ export default function CommandCenter() {
                             : '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
                 }}
                 transition={{ duration: 0.3 }}
-                className="flex items-center justify-between gap-4 px-1 py-1 pr-6 bg-[#0A0A0A]/90 backdrop-blur-xl rounded-full border shadow-2xl ring-1 ring-white/5"
+                className="flex items-center justify-between gap-4 px-1 py-1 pr-6 bg-brand-card/90 backdrop-blur-xl rounded-full border border-brand-border shadow-2xl ring-1 ring-brand-foreground/5"
             >
                 <div className="flex items-center gap-3 flex-1 overflow-hidden min-h-[48px]">
                     {/* Toggle Button */}
                     <button
                         onClick={() => setIsListening(!isListening)}
-                        className={`p-3 rounded-full transition-all duration-300 ${isListening ? 'bg-red-500/20 text-red-500 hover:bg-red-500/30' : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
+                        className={`p-3 rounded-full transition-all duration-300 ${isListening ? 'bg-red-500/20 text-red-500 hover:bg-red-500/30' : 'bg-brand-foreground/5 text-brand-foreground/60 hover:bg-brand-foreground/10 hover:text-brand-foreground'
                             }`}
                     >
                         {isListening ? <Mic size={20} /> : <MicOff size={20} />}
@@ -114,7 +114,7 @@ export default function CommandCenter() {
                                     key="processing"
                                     initial={{ opacity: 0, y: 5 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="text-sm font-medium text-blue-400 truncate px-2"
+                                    className="text-sm font-medium text-brand-accent truncate px-2"
                                 >
                                     Gemini is designing your site...
                                 </motion.p>
@@ -134,8 +134,8 @@ export default function CommandCenter() {
                                     animate={{ opacity: 1 }}
                                     className="flex flex-col px-2"
                                 >
-                                    <span className="text-sm font-medium text-white/80">Voice Web</span>
-                                    <span className="text-[10px] text-white/40 font-mono flex items-center gap-1">
+                                    <span className="text-sm font-medium text-brand-foreground/80">Voice Web</span>
+                                    <span className="text-[10px] text-brand-foreground/40 font-mono flex items-center gap-1">
                                         <Command size={10} /> Press Ctrl+K
                                     </span>
                                 </motion.div>

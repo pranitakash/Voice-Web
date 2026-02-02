@@ -97,18 +97,18 @@ function DashboardContent() {
 
     if (!user) {
         return (
-            <main className="min-h-screen bg-[#030303] text-white flex flex-col items-center justify-center p-4">
+            <main className="min-h-screen bg-brand-background text-brand-foreground flex flex-col items-center justify-center p-4">
                 <Navbar onLogin={() => setIsAuthModalOpen(true)} />
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center space-y-6"
                 >
-                    <h2 className="text-3xl font-bold">Access Denied</h2>
-                    <p className="text-white/40">Please sign in to view your dashboard.</p>
+                    <h2 className="text-3xl font-bold text-brand-foreground">Access Denied</h2>
+                    <p className="text-brand-foreground/40">Please sign in to view your dashboard.</p>
                     <button
                         onClick={() => setIsAuthModalOpen(true)}
-                        className="px-8 py-4 bg-blue-600 rounded-2xl font-bold hover:bg-blue-500 transition-all"
+                        className="px-8 py-4 bg-brand-accent text-brand-accent-foreground rounded-2xl font-bold hover:opacity-90 transition-all shadow-lg shadow-brand-accent/20"
                     >
                         Sign In Now
                     </button>
@@ -121,7 +121,7 @@ function DashboardContent() {
     const isSetupMode = searchParams.get("setup") === "true";
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white selection:bg-blue-500/30">
+        <main className="min-h-screen bg-brand-background text-brand-foreground selection:bg-brand-accent/30">
             <Navbar onLogin={() => setIsAuthModalOpen(true)} />
 
             <div className="pt-32 pb-24 px-4 max-w-7xl mx-auto">
@@ -132,13 +132,13 @@ function DashboardContent() {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 relative overflow-hidden"
+                            className="bg-brand-card border border-brand-border rounded-3xl p-8 relative overflow-hidden shadow-2xl shadow-black/5 dark:shadow-none"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-3xl rounded-full" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-3xl rounded-full" />
 
                             <div className="flex flex-col items-center text-center space-y-4 mb-8">
-                                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-600 p-1">
-                                    <div className="w-full h-full rounded-full bg-[#050505] flex items-center justify-center text-3xl font-bold text-blue-400">
+                                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-accent to-brand-accent/60 p-1">
+                                    <div className="w-full h-full rounded-full bg-brand-background flex items-center justify-center text-3xl font-bold text-brand-accent">
                                         {userProfile?.avatar ? (
                                             <img src={userProfile.avatar} alt="Avatar" className="w-[88px] h-[88px] rounded-full object-cover" />
                                         ) : (
@@ -147,8 +147,8 @@ function DashboardContent() {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold">{userProfile?.name || "New Creator"}</h3>
-                                    <div className="flex items-center justify-center gap-2 text-white/40 text-sm">
+                                    <h3 className="text-xl font-bold text-brand-foreground">{userProfile?.name || "New Creator"}</h3>
+                                    <div className="flex items-center justify-center gap-2 text-brand-foreground/40 text-sm">
                                         {userProfile?.role && <span>{userProfile.role}</span>}
                                         {userProfile?.country && <span>• {userProfile.country}</span>}
                                     </div>
@@ -158,85 +158,85 @@ function DashboardContent() {
                             {isEditing ? (
                                 <div className="space-y-4">
                                     {isSetupMode && (
-                                        <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-400 text-xs mb-4">
+                                        <div className="p-3 bg-brand-accent/10 border border-brand-accent/20 rounded-xl text-brand-accent text-xs mb-4">
                                             Welcome! Please complete these basic fields to continue.
                                         </div>
                                     )}
                                     <div className="space-y-2">
-                                        <label className="text-xs text-white/20 uppercase tracking-widest pl-2">Full Name *</label>
+                                        <label className="text-xs text-brand-foreground/20 uppercase tracking-widest pl-2">Full Name *</label>
                                         <input
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             placeholder="Your Name"
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all"
+                                            className="w-full bg-brand-foreground/5 border border-brand-border rounded-xl p-3 focus:border-brand-accent/50 outline-none transition-all text-brand-foreground"
                                         />
                                     </div>
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="space-y-2">
-                                            <label className="text-xs text-white/20 uppercase tracking-widest pl-2">Country *</label>
+                                            <label className="text-xs text-brand-foreground/20 uppercase tracking-widest pl-2">Country *</label>
                                             <select
                                                 value={formData.country}
                                                 onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all appearance-none"
+                                                className="w-full bg-brand-foreground/5 border border-brand-border rounded-xl p-3 focus:border-brand-accent/50 outline-none transition-all appearance-none text-brand-foreground"
                                             >
-                                                <option value="" disabled className="bg-[#0A0A0A]">Select</option>
-                                                {COUNTRIES.map(c => <option key={c} value={c} className="bg-[#0A0A0A]">{c}</option>)}
+                                                <option value="" disabled className="bg-brand-card">Select</option>
+                                                {COUNTRIES.map(c => <option key={c} value={c} className="bg-brand-card">{c}</option>)}
                                             </select>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs text-white/20 uppercase tracking-widest pl-2">Role *</label>
+                                            <label className="text-xs text-brand-foreground/20 uppercase tracking-widest pl-2">Role *</label>
                                             <select
                                                 value={formData.role}
                                                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all appearance-none"
+                                                className="w-full bg-brand-foreground/5 border border-brand-border rounded-xl p-3 focus:border-brand-accent/50 outline-none transition-all appearance-none text-brand-foreground"
                                             >
-                                                <option value="" disabled className="bg-[#0A0A0A]">Select</option>
-                                                {ROLES.map(r => <option key={r} value={r} className="bg-[#0A0A0A]">{r}</option>)}
+                                                <option value="" disabled className="bg-brand-card">Select</option>
+                                                {ROLES.map(r => <option key={r} value={r} className="bg-brand-card">{r}</option>)}
                                             </select>
                                         </div>
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-xs text-white/20 uppercase tracking-widest pl-2">Primary Use Case *</label>
+                                        <label className="text-xs text-brand-foreground/20 uppercase tracking-widest pl-2">Primary Use Case *</label>
                                         <input
                                             value={formData.useCase}
                                             onChange={(e) => setFormData({ ...formData, useCase: e.target.value })}
                                             placeholder="What will you use this tool for?"
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all"
+                                            className="w-full bg-brand-foreground/5 border border-brand-border rounded-xl p-3 focus:border-brand-accent/50 outline-none transition-all text-brand-foreground"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-xs text-white/20 uppercase tracking-widest pl-2">Bio</label>
+                                        <label className="text-xs text-brand-foreground/20 uppercase tracking-widest pl-2">Bio</label>
                                         <textarea
                                             value={formData.bio}
                                             onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                                             placeholder="A short bio..."
                                             rows={2}
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 focus:border-blue-500/50 outline-none transition-all resize-none"
+                                            className="w-full bg-brand-foreground/5 border border-brand-border rounded-xl p-3 focus:border-brand-accent/50 outline-none transition-all resize-none text-brand-foreground"
                                         />
                                     </div>
                                     <button
                                         onClick={handleSaveProfile}
                                         disabled={isSaving}
-                                        className="w-full py-3 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                                        className="w-full py-3 bg-brand-accent text-brand-accent-foreground rounded-xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                                     >
                                         {isSaving ? "Saving..." : <><Save className="w-4 h-4" /> Save Profile</>}
                                     </button>
                                 </div>
                             ) : (
                                 <div className="space-y-6">
-                                    <div className="p-4 bg-white/5 rounded-2xl border border-white/5 space-y-4">
+                                    <div className="p-4 bg-brand-foreground/5 rounded-2xl border border-brand-border/50 space-y-4">
                                         <div>
-                                            <p className="text-[10px] text-white/20 uppercase tracking-tight mb-1">About</p>
-                                            <p className="text-sm text-white/60 italic">{userProfile?.bio || "No bio added."}</p>
+                                            <p className="text-[10px] text-brand-foreground/20 uppercase tracking-tight mb-1">About</p>
+                                            <p className="text-sm text-brand-foreground/60 italic">{userProfile?.bio || "No bio added."}</p>
                                         </div>
                                         <div>
-                                            <p className="text-[10px] text-white/20 uppercase tracking-tight mb-1">Use Case</p>
-                                            <p className="text-sm text-white/80">{userProfile?.useCase || "Not specified."}</p>
+                                            <p className="text-[10px] text-brand-foreground/20 uppercase tracking-tight mb-1">Use Case</p>
+                                            <p className="text-sm text-brand-foreground/80">{userProfile?.useCase || "Not specified."}</p>
                                         </div>
                                     </div>
                                     <button
                                         onClick={() => setIsEditing(true)}
-                                        className="w-full py-3 border border-white/10 rounded-xl font-medium hover:bg-white/5 transition-all"
+                                        className="w-full py-3 border border-brand-border rounded-xl font-medium text-brand-foreground hover:bg-brand-foreground/5 transition-all"
                                     >
                                         Edit Profile
                                     </button>
@@ -244,13 +244,13 @@ function DashboardContent() {
                             )}
                         </motion.div>
 
-                        <div className="bg-blue-600/5 border border-blue-500/10 rounded-3xl p-6 flex items-center gap-4">
-                            <div className="w-10 h-10 bg-blue-600/20 rounded-xl flex items-center justify-center">
-                                <Clock className="w-5 h-5 text-blue-400" />
+                        <div className="bg-brand-accent/5 border border-brand-accent/10 rounded-3xl p-6 flex items-center gap-4">
+                            <div className="w-10 h-10 bg-brand-accent/20 rounded-xl flex items-center justify-center">
+                                <Clock className="w-5 h-5 text-brand-accent" />
                             </div>
                             <div>
-                                <h4 className="font-bold text-sm">Pro Status</h4>
-                                <p className="text-xs text-white/40">Active until Dec 2026</p>
+                                <h4 className="font-bold text-sm text-brand-foreground">Pro Status</h4>
+                                <p className="text-xs text-brand-foreground/40">Active until Dec 2026</p>
                             </div>
                         </div>
                     </div>
@@ -258,11 +258,11 @@ function DashboardContent() {
                     {/* Main Content / History */}
                     <div className="lg:col-span-2 space-y-8">
                         <div className="flex items-center justify-between">
-                            <h2 className="text-2xl font-bold flex items-center gap-3">
-                                <History className="w-6 h-6 text-blue-400" />
+                            <h2 className="text-2xl font-bold flex items-center gap-3 text-brand-foreground">
+                                <History className="w-6 h-6 text-brand-accent" />
                                 Generation History
                             </h2>
-                            <span className="text-xs text-white/20 px-3 py-1 border border-white/10 rounded-full font-mono">
+                            <span className="text-xs text-brand-foreground/20 px-3 py-1 border border-brand-border rounded-full font-mono">
                                 {history.length} ITEMS
                             </span>
                         </div>
@@ -271,18 +271,18 @@ function DashboardContent() {
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                className="bg-[#0A0A0A] border border-white/10 rounded-3xl p-12 text-center space-y-4"
+                                className="bg-brand-card border border-brand-border rounded-3xl p-12 text-center space-y-4 shadow-2xl shadow-black/5 dark:shadow-none"
                             >
-                                <div className="w-16 h-16 bg-white/5 rounded-full mx-auto flex items-center justify-center">
-                                    <Code className="w-8 h-8 text-white/10" />
+                                <div className="w-16 h-16 bg-brand-foreground/5 rounded-full mx-auto flex items-center justify-center">
+                                    <Code className="w-8 h-8 text-brand-foreground/10" />
                                 </div>
-                                <h3 className="text-xl font-medium text-white/60">No generations yet</h3>
-                                <p className="text-white/20 text-sm max-w-xs mx-auto">
+                                <h3 className="text-xl font-medium text-brand-foreground/60">No generations yet</h3>
+                                <p className="text-brand-foreground/20 text-sm max-w-xs mx-auto">
                                     Start using your voice in the Studio to see your history here.
                                 </p>
                                 <button
                                     onClick={() => router.push('/studio')}
-                                    className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-bold group inline-flex items-center gap-2"
+                                    className="px-6 py-3 bg-brand-foreground/5 border border-brand-border rounded-xl hover:bg-brand-foreground/10 transition-all font-bold group inline-flex items-center gap-2 text-brand-foreground"
                                 >
                                     Go to Studio
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -296,7 +296,7 @@ function DashboardContent() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         whileHover={{ scale: 1.01, y: -2 }}
-                                        className="bg-[#0A0A0A] border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 transition-all cursor-pointer group relative overflow-hidden flex gap-6"
+                                        className="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-accent/30 transition-all cursor-pointer group relative overflow-hidden flex gap-6 shadow-xl shadow-black/5 dark:shadow-none"
                                         onClick={() => {
                                             setSelectedHistoryItem({
                                                 id: item.id,
@@ -307,10 +307,10 @@ function DashboardContent() {
                                         }}
                                     >
                                         {/* Subtle Glow */}
-                                        <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/[0.02] transition-colors duration-500" />
+                                        <div className="absolute inset-0 bg-brand-accent/0 group-hover:bg-brand-accent/[0.02] transition-colors duration-500" />
 
                                         {/* Thumbnail Header */}
-                                        <div className="w-24 h-24 rounded-xl overflow-hidden bg-white/5 border border-white/10 hidden sm:block shrink-0">
+                                        <div className="w-24 h-24 rounded-xl overflow-hidden bg-brand-foreground/5 border border-brand-border hidden sm:block shrink-0">
                                             <motion.img
                                                 src={`/features/${index % 2 === 0 ? 'ai_brain.png' : 'realtime.png'}`}
                                                 alt="Preview"
@@ -322,11 +322,11 @@ function DashboardContent() {
 
                                         <div className="flex-1 flex items-start justify-between min-w-0">
                                             <div className="space-y-2 truncate">
-                                                <p className="text-sm font-bold text-blue-400 font-mono tracking-tighter uppercase">Prompt</p>
-                                                <h4 className="text-lg font-medium leading-tight group-hover:text-white transition-colors truncate">
+                                                <p className="text-sm font-bold text-brand-accent font-mono tracking-tighter uppercase">Prompt</p>
+                                                <h4 className="text-lg font-medium leading-tight text-brand-foreground/80 group-hover:text-brand-foreground transition-colors truncate">
                                                     &quot;{item.prompt}&quot;
                                                 </h4>
-                                                <div className="flex items-center gap-4 text-xs text-white/20">
+                                                <div className="flex items-center gap-4 text-xs text-brand-foreground/40">
                                                     <span className="flex items-center gap-1">
                                                         <Clock className="w-3 h-3" />
                                                         {new Date(item.timestamp).toLocaleDateString()}
@@ -337,8 +337,8 @@ function DashboardContent() {
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 transition-all shrink-0">
-                                                <ArrowRight className="w-5 h-5 group-hover:text-white text-white/20" />
+                                            <div className="w-10 h-10 rounded-xl bg-brand-foreground/5 flex items-center justify-center group-hover:bg-brand-accent transition-all shrink-0">
+                                                <ArrowRight className="w-5 h-5 group-hover:text-brand-accent-foreground text-brand-foreground/20" />
                                             </div>
                                         </div>
                                     </motion.div>
@@ -366,8 +366,8 @@ function DashboardContent() {
 export default function Dashboard() {
     return (
         <Suspense fallback={
-            <div className="min-h-screen bg-[#030303] flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+            <div className="min-h-screen bg-brand-background flex items-center justify-center">
+                <div className="w-8 h-8 border-2 border-brand-accent border-t-transparent rounded-full animate-spin" />
             </div>
         }>
             <DashboardContent />

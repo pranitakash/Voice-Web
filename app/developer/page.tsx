@@ -14,7 +14,7 @@ export default function DeveloperPage() {
     const router = useRouter();
 
     return (
-        <main className="min-h-screen bg-[#030303] text-white selection:bg-blue-500/30">
+        <main className="min-h-screen bg-brand-background text-brand-foreground selection:bg-brand-accent/30">
             <Navbar onLogin={() => setIsAuthModalOpen(true)} />
 
             <div className="pt-32 pb-24 px-4 max-w-4xl mx-auto">
@@ -25,21 +25,21 @@ export default function DeveloperPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="relative mb-8"
                     >
-                        <div className="w-40 h-40 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-600 p-1">
-                            <div className="w-full h-full rounded-full bg-[#050505] flex items-center justify-center overflow-hidden">
+                        <div className="w-40 h-40 rounded-full bg-gradient-to-tr from-brand-accent to-brand-accent/60 p-1">
+                            <div className="w-full h-full rounded-full bg-brand-background flex items-center justify-center overflow-hidden">
                                 {/* Avatar Placeholder */}
-                                <span className="text-6xl font-black text-white/10 select-none">PA</span>
+                                <span className="text-6xl font-black text-brand-foreground/10 select-none">PA</span>
                             </div>
                         </div>
-                        <div className="absolute -bottom-2 -right-2 bg-blue-600 p-2 rounded-xl border-4 border-[#030303]">
-                            <Code2 className="w-5 h-5 text-white" />
+                        <div className="absolute -bottom-2 -right-2 bg-brand-accent p-2 rounded-xl border-4 border-brand-background">
+                            <Code2 className="w-5 h-5 text-brand-accent-foreground" />
                         </div>
                     </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl font-bold mb-4"
+                        className="text-4xl font-bold mb-4 text-brand-foreground"
                     >
                         Pranit Akash
                     </motion.h1>
@@ -47,7 +47,7 @@ export default function DeveloperPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-blue-400 font-medium mb-8 uppercase tracking-widest text-sm"
+                        className="text-brand-accent font-medium mb-8 uppercase tracking-widest text-sm"
                     >
                         Visionary Developer & Creator
                     </motion.p>
@@ -56,12 +56,12 @@ export default function DeveloperPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl mb-12 text-left"
+                        className="p-8 rounded-3xl bg-brand-card border border-brand-border backdrop-blur-xl mb-12 text-left shadow-2xl shadow-black/5 dark:shadow-none"
                     >
-                        <p className="text-white/60 leading-relaxed mb-6">
+                        <p className="text-brand-foreground/60 leading-relaxed mb-6">
                             Hey there! I&apos;m Pranit, the developer behind **Voice Web**. I&apos;m obsessed with bridging the gap between human language and digital creation. My goal is to build tools that feel like extensions of our mind.
                         </p>
-                        <p className="text-white/60 leading-relaxed">
+                        <p className="text-brand-foreground/60 leading-relaxed">
                             When I&apos;m not architecting LLM-driven interfaces, you&apos;ll find me exploring the latest in frontend performance or tinkering with hardware.
                         </p>
                     </motion.div>
@@ -70,9 +70,9 @@ export default function DeveloperPage() {
                     <div className="flex flex-wrap items-center justify-center gap-4 mb-20">
                         {[
                             { name: "GitHub", icon: Github, href: "https://github.com/pranitakash", color: "hover:bg-gray-800" },
-                            { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/pranit-akash/", color: "hover:bg-blue-600" },
+                            { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/pranit-akash/", color: "hover:bg-brand-accent" },
                             { name: "Instagram", icon: Instagram, href: "https://instagram.com/pranit_akash", color: "hover:bg-pink-600" },
-                            { name: "Email", icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=pranit.dot.akash@gmail.com", color: "hover:bg-blue-600" }
+                            { name: "Email", icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=pranit.dot.akash@gmail.com", color: "hover:bg-brand-accent" }
                         ].map((social, i) => (
                             <motion.a
                                 key={social.name}
@@ -82,19 +82,19 @@ export default function DeveloperPage() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 + (i * 0.1) }}
-                                className={`flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 ${social.color} transition-all active:scale-95 group`}
+                                className={`flex items-center gap-2 px-6 py-3 rounded-full bg-brand-card border border-brand-border ${social.color} transition-all active:scale-95 group shadow-lg shadow-black/5 dark:shadow-none`}
                             >
-                                <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                                <span className="font-medium">{social.name}</span>
+                                <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform text-brand-foreground" />
+                                <span className="font-medium text-brand-foreground">{social.name}</span>
                             </motion.a>
                         ))}
                     </div>
                     {/* Stats Section */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                         {[
-                            { label: "Coffee Consumed", value: "∞ cups", icon: Heart, image: "/features/coffee.png", color: "text-blue-400" },
-                            { label: "Lines of Code", value: "1M+", icon: Code2, image: "/features/code.png", color: "text-blue-400" },
-                            { label: "Projects Shipped", value: "25+", icon: Rocket, image: "/features/rocket.png", color: "text-blue-400" }
+                            { label: "Coffee Consumed", value: "∞ cups", icon: Heart, image: "/features/coffee.png", color: "text-brand-accent" },
+                            { label: "Lines of Code", value: "1M+", icon: Code2, image: "/features/code.png", color: "text-brand-accent" },
+                            { label: "Projects Shipped", value: "25+", icon: Rocket, image: "/features/rocket.png", color: "text-brand-accent" }
                         ].map((stat, i) => (
                             <motion.div
                                 key={stat.label}
@@ -103,9 +103,9 @@ export default function DeveloperPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4 + (i * 0.1) }}
                                 whileHover={{ y: -8 }}
-                                className="relative group rounded-[2rem] bg-[#0A0A0A] border border-white/10 overflow-hidden flex flex-col p-2"
+                                className="relative group rounded-[2rem] bg-brand-card border border-brand-border overflow-hidden flex flex-col p-2 shadow-2xl shadow-black/5 dark:shadow-none"
                             >
-                                <div className="relative h-44 rounded-[1.5rem] overflow-hidden mb-4 bg-black/40">
+                                <div className="relative h-44 rounded-[1.5rem] overflow-hidden mb-4 bg-brand-foreground/5">
                                     <motion.img
                                         src={stat.image}
                                         alt={stat.label}
@@ -113,16 +113,16 @@ export default function DeveloperPage() {
                                         whileHover={{ scale: 1.15 }}
                                         transition={{ duration: 1, ease: "circOut" }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60" />
-                                    <div className="absolute bottom-4 left-4 p-2 rounded-xl bg-black/60 backdrop-blur-xl border border-white/10">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent opacity-60" />
+                                    <div className="absolute bottom-4 left-4 p-2 rounded-xl bg-brand-background/60 backdrop-blur-xl border border-brand-border">
                                         <stat.icon className={`w-4 h-4 ${stat.color}`} />
                                     </div>
                                 </div>
                                 <div className="px-6 pb-6 pt-2 text-center">
-                                    <span className="text-3xl font-black text-white group-hover:text-blue-400 transition-colors tracking-tighter">
+                                    <span className="text-3xl font-black text-brand-foreground group-hover:text-brand-accent transition-colors tracking-tighter">
                                         {stat.value}
                                     </span>
-                                    <p className="text-[10px] text-white/30 uppercase font-black tracking-[0.2em] mt-2">
+                                    <p className="text-[10px] text-brand-foreground/30 uppercase font-black tracking-[0.2em] mt-2">
                                         {stat.label}
                                     </p>
                                 </div>
