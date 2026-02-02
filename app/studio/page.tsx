@@ -24,7 +24,7 @@ export default function Home() {
     <main className="relative h-screen w-full overflow-hidden bg-brand-background flex flex-col pt-24 pb-40">
       {/* Global Dot Grid Background */}
       <div
-        className="absolute inset-0 pointer-events-none z-0 bg-dot-grid opacity-80"
+        className="absolute inset-0 pointer-events-none z-0 bg-dot-grid opacity-[0.3] dark:opacity-80 transition-opacity"
       />
 
       <StudioNavbar />
@@ -42,7 +42,7 @@ export default function Home() {
               <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
             </div>
             <div className="flex-1 flex justify-center mr-12">
-              <div className="bg-brand-foreground/5 rounded-full px-4 py-1 text-[11px] text-brand-foreground/20 font-mono w-64 text-center border border-brand-border flex items-center justify-center gap-2">
+              <div className="bg-brand-background/20 rounded-full px-4 py-1 text-[11px] text-brand-foreground/30 font-mono w-64 text-center border border-brand-border flex items-center justify-center gap-2">
                 preview.voiceweb.studio
               </div>
             </div>

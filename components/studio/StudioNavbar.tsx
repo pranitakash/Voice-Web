@@ -29,17 +29,17 @@ export const StudioNavbar = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 items-center pointer-events-auto">
                 {/* Left: Branding */}
                 <div className="flex justify-start">
-                    <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm group hover:bg-white/10 transition-all">
+                    <Link href="/" className="flex items-center gap-3 px-6 py-3 bg-brand-card/80 backdrop-blur-xl border border-brand-border rounded-full shadow-sm group hover:bg-brand-card transition-all">
                         <div className="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-brand-accent/20">
-                            <Waves className="w-5 h-5 text-white" />
+                            <Waves className="w-5 h-5 text-brand-accent-foreground" />
                         </div>
-                        <span className="text-xl font-bold text-white tracking-tight">Voice Web</span>
+                        <span className="text-xl font-bold text-brand-foreground tracking-tight">Voice Web</span>
                     </Link>
                 </div>
 
                 {/* Middle: Capsule */}
                 <div className="hidden md:flex justify-center">
-                    <div className="flex items-center gap-10 px-8 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-sm">
+                    <div className="flex items-center gap-10 px-8 py-3 bg-brand-card/80 backdrop-blur-xl border border-brand-border rounded-full shadow-sm">
                         <Link
                             href="/dashboard"
                             className="text-sm font-medium text-brand-accent hover:text-brand-accent transition-colors flex items-center gap-2"
@@ -55,7 +55,7 @@ export const StudioNavbar = () => {
                     <ThemeToggle />
                     <button
                         onClick={handleLogout}
-                        className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-all active:scale-95"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-brand-card/80 backdrop-blur-xl border border-brand-border text-brand-foreground text-sm font-bold rounded-full hover:bg-brand-card transition-all active:scale-95"
                     >
                         <LogOut className="w-4 h-4" />
                         Logout

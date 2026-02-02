@@ -124,7 +124,7 @@ export default function CommandCenter() {
                                     initial={{ opacity: 0, y: 5 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -5 }}
-                                    className="text-sm font-medium text-white truncate px-2"
+                                    className="text-sm font-medium text-brand-foreground truncate px-2"
                                 >
                                     {transcript}
                                 </motion.p>

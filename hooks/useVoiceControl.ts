@@ -170,7 +170,8 @@ export const useVoiceControl = () => {
                     setIsListening(false);
                     restartAttemptsRef.current = MAX_RESTART_ATTEMPTS;
                 } else if (event.error === 'no-speech') {
-                    setTranscript('No speech detected...');
+                    // Silent handling for no-speech
+                    console.log('[Voice] No speech detected - silencing...');
                     // onend will handle the restart IF isListening is true
                 } else if (event.error === 'audio-capture') {
                     setTranscript('No microphone detected');
